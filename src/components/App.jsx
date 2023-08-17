@@ -50,7 +50,8 @@ export class App extends Component {
         <Statistics 
           stats = {this.state}
           total = {this.countTotalFeedback()}
-          percentage = {this.countPositiveFeedbackPercentage(this.countTotalFeedback())}/>)
+          percentage = {this.countPositiveFeedbackPercentage(this.countTotalFeedback())}/>
+          )
       } else {
         return (<NoFeedbackText>No feedback yet :c</NoFeedbackText>)
       }
@@ -60,11 +61,11 @@ export class App extends Component {
   render(){
     return(
       <>
-      <Section title = "Please leave feedback">
+      <Section>
+        <h2>Please leave feedback</h2>
         <FeedbackOptions handleClick = {this.handleClick} />
       </Section>
-      
-      <Section title = "Statistics">
+      <Section>
         {this.getRenderElements()}
       </Section>
     </>
